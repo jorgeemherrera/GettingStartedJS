@@ -51,3 +51,5 @@ do {
 }
 while (count < 5);
 
+changePercentOff(30);
+
