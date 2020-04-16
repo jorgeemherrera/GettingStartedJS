@@ -136,3 +136,28 @@ values.forEach(function(item) {
 const containers = document.getElementsByClassName('container');
 containers[1].classList.add('test-class');
 console.log(containers);
+
+//Global Scope
+const app = {
+  productId: 12345
+}
+
+function showProductId() {
+  console.log(app.productId)
+}
+
+showProductId();
+
+//Function Scope
+
+function showProductIdFS() {
+  let productId = 9876;
+  function fix() {
+    let productId = 4567890;
+    console.log('in fix: ', productId)
+  }
+  fix();
+  console.log('in showProductIdFS: ', productId)
+}
+// console.log(productId) --> undefined
+showProductIdFS();
