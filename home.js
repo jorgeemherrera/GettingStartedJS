@@ -97,6 +97,42 @@ button.addEventListener('click', function() {
     button.textContent = 'SEE REVIEW';
   }
  
-})
+});
+
+const values = ['a', 'b', 'c'];
+
+values.push('d', 'e', 'f');
+
+//let last = values.pop();
+//let first = values.shift();
+values.unshift('y', 'z');
+
+const newValues = values.slice(1,4)
+values.splice(2, 1, 'Hello');
+console.log(values);
+console.log(newValues);
+console.log(values.indexOf('z'));
+
+const set = values.filter(function(item) {
+  console.log('item: ', item);
+  return item > 'c';
+});
+
+console.log('set: ', set);
+
+const valuesFind = ['a', 'bbb', 'c'];
+
+const found = valuesFind.find(function(item) {
+  return item.length > 1
+});
+
+console.log('found: ', found);
 
 
+values.forEach(function(item) {
+  console.log('forEach: ', item)
+});
+
+const containers = document.getElementsByClassName('container');
+containers[1].classList.add('test-class');
+console.log(containers);
